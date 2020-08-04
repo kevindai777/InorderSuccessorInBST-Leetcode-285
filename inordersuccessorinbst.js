@@ -1,6 +1,32 @@
 //Objective is to find the successor to a node in a BST. The successor of a node is the node
 //that has the smallest key that is still greater than the node.
 
+class Node {
+    constructor(val, left = null, right = null) {
+      this.val = val
+      this.left = left
+      this.right = right
+    }
+}
+  
+class Tree {
+    constructor(root) {
+      this.root = null
+    }
+  
+    createRoot(val) {
+      this.root = new Node(null, null, val)
+    }
+  
+    addLeftNode(node, val) {
+      node.left = new Node(null, null, val)
+    }
+  
+    addRightNode(node, val) {
+      node.right = new Node(null, null, val)
+    }
+}
+
 let tree = new Tree()
 tree.createRoot(11)
 tree.addLeftNode(tree.root, 9)
